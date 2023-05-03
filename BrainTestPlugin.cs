@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace DrakiaXYZ.BrainTest
 {
     [BepInPlugin("xyz.drakia.braintest", "DrakiaXYZ-BrainTest", "0.1.0")]
-    [BepInDependency("xyz.drakia.bigbrain", "^0.1.0")]
+    [BepInDependency("xyz.drakia.bigbrain", "0.1.0")]
     public class BrainTestPlugin : BaseUnityPlugin
     {
         private void Awake()
         {
-            BrainManager.AddCustomLayer(typeof(PatrolAssaultLayer), new List<string>() { "Assault" }, 2);
+            BrainManager.AddCustomLayer(typeof(PatrolAssaultLayer), new List<string>() { "Assault" }, 10);
         }
     }
 }

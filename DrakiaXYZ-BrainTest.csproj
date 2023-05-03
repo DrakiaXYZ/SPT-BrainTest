@@ -117,7 +117,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrainTestPlugin.cs" />
+    <Compile Include="Brain\Logics\AlternativePatrolLogic.cs" />
+    <Compile Include="Brain\Logics\EatDrinkLogic.cs" />
+    <Compile Include="Brain\Logics\FollowerPatrolLogic.cs" />
+    <Compile Include="Brain\Logics\FriendlyTiltLogic.cs" />
+    <Compile Include="Brain\Logics\GestureLogic.cs" />
+    <Compile Include="Brain\Logics\GoToCoverPointLogic.cs" />
+    <Compile Include="Brain\Logics\HealLogic.cs" />
+    <Compile Include="Brain\Logics\PeacefulLogic.cs" />
+    <Compile Include="Brain\Logics\PeaceHardAimLogic.cs" />
+    <Compile Include="Brain\Logics\PeaceLookLogic.cs" />
+    <Compile Include="Brain\Logics\SimplePatrolLogic.cs" />
+    <Compile Include="Brain\Logics\WatchSecondWeaponLogic.cs" />
     <Compile Include="Brain\PatrolAssaultLayer.cs" />
+    <Compile Include="Brain\Logics\RunToCoverLogic.cs" />
     <Compile Include="VersionChecker\TarkovVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
