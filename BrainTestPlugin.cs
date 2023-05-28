@@ -11,7 +11,8 @@ namespace DrakiaXYZ.BrainTest
     {
         private void Awake()
         {
-            BrainManager.AddCustomLayer(typeof(PatrolAssaultLayer), new List<string>() { "Assault" }, 10);
+            BrainManager.RemoveLayer("PatrolAssault", new List<string>() { "Assault" });
+            BrainManager.AddCustomLayer(typeof(PatrolAssaultLayer), new List<string>() { "Assault" }, 2);
         }
     }
 }
