@@ -2,6 +2,7 @@
 using DrakiaXYZ.BrainTest.Brain.Logics;
 using EFT;
 using System;
+using System.Text;
 using UnityEngine;
 
 namespace DrakiaXYZ.BrainTest.Brain
@@ -9,6 +10,7 @@ namespace DrakiaXYZ.BrainTest.Brain
     internal class PatrolAssaultLayer : CustomLayer
     {
         private float nextReloadTime;
+        private float nextLogTime;
 
         public PatrolAssaultLayer(BotOwner botOwner, int priority) : base(botOwner, priority)
         {
@@ -23,6 +25,12 @@ namespace DrakiaXYZ.BrainTest.Brain
         {
             BotOwner.PriorityAxeTarget.FindTarget();
             return true;
+        }
+
+        public override void BuildDebugText(StringBuilder stringBuilder)
+        {
+            stringBuilder.AppendLine("Some Data: Thing");
+            stringBuilder.AppendLabeledValue("Label", "Data", Color.yellow, Color.red, true);
         }
 
         public override Action GetNextAction()
@@ -158,6 +166,12 @@ namespace DrakiaXYZ.BrainTest.Brain
 
         public override bool IsCurrentActionEnding()
         {
+            //if (Time.time > nextLogTime)
+            //{
+            //    nextLogTime = Time.time + 5f;
+            //    Console.WriteLine($"Bot {BotOwner.name} is on custom layer? {BrainManager.IsCustomLayerActive(BotOwner)}  Name: {BrainManager.GetActiveLayerName(BotOwner)}  Class: {BrainManager.GetActiveLayer(BotOwner).GetType()}");
+            //}
+
             Type currentActionType = CurrentAction?.Type;
 
             // I don't really know a more elegant way to do this condition than direct comparing the types

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace DrakiaXYZ.BrainTest.Brain.Logics
 {
@@ -19,6 +20,12 @@ namespace DrakiaXYZ.BrainTest.Brain.Logics
         public override void Update()
         {
             baseLogic.Update();
+        }
+
+        public override void BuildDebugText(StringBuilder stringBuilder)
+        {
+            stringBuilder.AppendLine("Some Data: From Logioc");
+            stringBuilder.AppendLabeledValue("Label", "This is Logic", Color.blue, Color.green, true);
         }
     }
 }
