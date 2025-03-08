@@ -1,24 +1,19 @@
 ﻿using DrakiaXYZ.BigBrain.Brains;
 using EFT;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrakiaXYZ.BrainTest.Brain.Logics
 {
     internal class EatDrinkLogic : CustomLogic
     {
-        private GClass169 baseLogic;
+        private GClass254 baseLogic;
         public EatDrinkLogic(BotOwner botOwner) : base(botOwner)
         {
-            baseLogic = new GClass169(botOwner);
+            baseLogic = new GClass254(botOwner);
         }
 
-        public override void Update()
+        public override void Update(CustomLayer.ActionData data)
         {
-            baseLogic.Update();
+            baseLogic.UpdateNodeByBrain(data);
         }
     }
 }

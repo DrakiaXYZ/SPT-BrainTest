@@ -1,24 +1,19 @@
 ﻿using DrakiaXYZ.BigBrain.Brains;
 using EFT;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrakiaXYZ.BrainTest.Brain.Logics
 {
     internal class FriendlyTiltLogic : CustomLogic
     {
-        private GClass170 baseLogic;
+        private GClass255 baseLogic;
         public FriendlyTiltLogic(BotOwner botOwner) : base(botOwner)
         {
-            baseLogic = new GClass170(botOwner);
+            baseLogic = new GClass255(botOwner);
         }
 
-        public override void Update()
+        public override void Update(CustomLayer.ActionData data)
         {
-            baseLogic.Update();
+            baseLogic.UpdateNodeByBrain(data);
         }
     }
 }

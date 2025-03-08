@@ -1,24 +1,19 @@
 ﻿using DrakiaXYZ.BigBrain.Brains;
 using EFT;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrakiaXYZ.BrainTest.Brain.Logics
 {
     internal class PeaceHardAimLogic : CustomLogic
     {
-        private GClass174 baseLogic;
+        private GClass260 baseLogic;
         public PeaceHardAimLogic(BotOwner botOwner) : base(botOwner)
         {
-            baseLogic = new GClass174(botOwner);
+            baseLogic = new GClass260(botOwner);
         }
 
-        public override void Update()
+        public override void Update(CustomLayer.ActionData data)
         {
-            baseLogic.Update();
+            baseLogic.UpdateNodeByBrain(data);
         }
     }
 }

@@ -1,24 +1,19 @@
 ﻿using DrakiaXYZ.BigBrain.Brains;
 using EFT;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrakiaXYZ.BrainTest.Brain.Logics
 {
     internal class AlternativePatrolLogic : CustomLogic
     {
-        private GClass156 baseLogic;
+        private GClass240 baseLogic;
         public AlternativePatrolLogic(BotOwner botOwner) : base(botOwner)
         {
-            baseLogic = new GClass156(botOwner);
+            baseLogic = new GClass240(botOwner);
         }
 
-        public override void Update()
+        public override void Update(CustomLayer.ActionData data)
         {
-            baseLogic.Update();
+            baseLogic.UpdateNodeByBrain(data);
         }
     }
 }

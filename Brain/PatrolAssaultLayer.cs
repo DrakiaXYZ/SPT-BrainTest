@@ -296,14 +296,8 @@ namespace DrakiaXYZ.BrainTest.Brain
             }
 
             // Not sure why this would exit the GoToCover state
-            GClass475 goalEnemy = BotOwner.Memory.GoalEnemy;
+            EnemyInfo goalEnemy = BotOwner.Memory.GoalEnemy;
             if (goalEnemy != null && goalEnemy.IsVisible && goalEnemy.CanShoot)
-            {
-                return true;
-            }
-
-            // If we have a suspicious place to check, stop going to cover
-            if (BotOwner.SuspiciousPlaceData.IsActive)
             {
                 return true;
             }
@@ -365,12 +359,6 @@ namespace DrakiaXYZ.BrainTest.Brain
 
             // If our cover point has been spotted, stop running to it
             if (BotOwner.Memory.CurCustomCoverPoint != null && BotOwner.Memory.CurCustomCoverPoint.IsSpotted)
-            {
-                return true;
-            }
-
-            // If we have a suspicious place to check, stop going to cover
-            if (BotOwner.SuspiciousPlaceData.IsActive)
             {
                 return true;
             }
